@@ -9,7 +9,7 @@ exploratory work.
 
 ## The deliverable is a decision, not a change
 
-This pipeline has no implementation stage, no PR, and nowhere to write code.
+This pipeline has no implementation stage, no MR, and nowhere to write code.
 That is deliberate. An exploration that quietly becomes a code change has
 skipped the decision it existed to inform, and a reviewer then has to evaluate
 the answer and the implementation at once — usually accepting both or neither.

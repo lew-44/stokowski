@@ -8,7 +8,7 @@ mid-run.
 
 1. Read and follow the project's `CLAUDE.md` (or `AGENTS.md`). Before writing
    code, find and read:
-   - the documented quality commands / pre-PR checklist — run those exact
+   - the documented quality commands / pre-MR checklist — run those exact
      commands, not a generic `lint && test` approximation
    - any known-agent-mistakes list (`.claude/rules/agent-pitfalls.md` or
      similar). These are real failures that already shipped; most of them
@@ -93,11 +93,11 @@ branches, and none of you can see each other's uncommitted work. Before you
 change anything shared, look:
 
 ```
-gh pr list --state open
+glab mr list
 git branch -r --sort=-committerdate | head -20
 ```
 
-Read the open PRs that touch the same area. If one already does what your
+Read the open MRs that touch the same area. If one already does what your
 ticket asks, say so in `next` and stop rather than producing a competing
 version. If one changes a file you need to change, say so in `risks` and keep
 your diff as narrow as you can.
@@ -131,6 +131,6 @@ Every prompt serves both first runs and rework runs. On rework the workspace
 already contains prior work — check for:
 
 - An existing feature branch (do not create a second)
-- An open PR (push to it, do not open another)
+- An open MR (push to it, do not open another)
 - Review comments requesting changes (address each specifically)
 - Your prior report (build on it, do not contradict it silently)

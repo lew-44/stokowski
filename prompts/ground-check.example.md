@@ -93,7 +93,7 @@ Write `.stokowski/report.json`:
 
 ## Rules
 
-- Do NOT write implementation code, create branches, or open PRs.
+- Do NOT write implementation code, create branches, or open MRs.
 - Do NOT post Linear comments — Stokowski posts your report.
 - Do NOT rewrite the investigation. Report on it; someone else fixes it.
 - Do NOT pass something because it sounds right. If you could not reproduce a

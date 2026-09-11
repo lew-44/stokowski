@@ -17,7 +17,7 @@ No description provided.
 ## Objective
 
 Perform a thorough, adversarial code review.  Your job is to find problems
-the implementer missed — not to rubber-stamp the PR.
+the implementer missed — not to rubber-stamp the MR.
 
 ## Review process
 
@@ -48,7 +48,7 @@ the implementer missed — not to rubber-stamp the PR.
    - **Performance** — Any obvious regressions or inefficiencies?
 6. Re-run the project's real quality suite yourself and record the actual
    output. Use the commands the project documents (check `CLAUDE.md` for a
-   pre-PR checklist), not a generic approximation of them.
+   pre-MR checklist), not a generic approximation of them.
 7. **Audit the implementer's grounding**, from `.stokowski/report.json` if it
    survives and from the run report on the Linear issue:
    - Did they verify which data source they read, or assume it?
@@ -95,7 +95,7 @@ If this is a rework run (the review stage is being re-run after changes):
 - Be specific: reference file names and line numbers.
 - Be constructive: suggest fixes, not just problems.
 - Do NOT make code changes yourself — this is a review-only stage.
-- Do NOT create or modify branches or PRs.
+- Do NOT create or modify branches or MRs.
 - Do NOT post a Linear comment — Stokowski posts your report.
 - Do NOT approve work whose central claim you could not independently confirm.
   Say what you could not verify.

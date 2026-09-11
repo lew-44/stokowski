@@ -64,7 +64,7 @@ a number a reader can see beats a number they have to trust.
 
 ## Do NOT
 
-- Write implementation code, create branches, or open PRs. There is no merge
+- Write implementation code, create branches, or open MRs. There is no merge
   stage; work written here is work thrown away.
 - Substitute a more interesting question for the one asked. Report it separately.
 - Present an inference from adjacent data as a measurement. If it is not

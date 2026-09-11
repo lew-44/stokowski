@@ -61,7 +61,7 @@ If this is a rework run (the workspace already has investigation content):
 ## Do NOT
 
 - Write implementation code.
-- Create branches or PRs.
+- Create branches or MRs.
 - Modify source files (reading is fine).
 - Post a summary comment on the issue — Stokowski does that from your report.
 - Report a confident conclusion you could not source. Lower the confidence
