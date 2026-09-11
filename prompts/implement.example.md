@@ -16,7 +16,7 @@ No description provided.
 
 ## Objective
 
-Implement the solution, create a PR, and ensure it passes all quality checks.
+Implement the solution, create an MR, and ensure it passes all quality checks.
 
 ## First run
 
@@ -28,18 +28,18 @@ Implement the solution, create a PR, and ensure it passes all quality checks.
    ```
 4. Implement the changes with clean, logical commits.
 5. Run the project's real quality suite — the exact commands it documents,
-   not a generic approximation. Check `CLAUDE.md` for the pre-PR checklist.
+   not a generic approximation. Check `CLAUDE.md` for the pre-MR checklist.
 6. Fix any failures before proceeding.
 7. Review your own diff, and run the project's review command if it has one
    (e.g. `/review-changes`) — slash commands work in this environment.
 8. Capture before/after screenshots into `$STOKOWSKI_ARTIFACTS` for anything
    visible to a user.
-9. Push the branch and create a PR:
+9. Push the branch and create an MR:
    ```
    git push -u origin HEAD
-   gh pr create --title "{{ issue.identifier }}: <concise title>" --body "<description>"
+   glab mr create --title "{{ issue.identifier }}: <concise title>" --description "<description>"
    ```
-10. Link the PR to the Linear issue.
+10. Link the MR to the Linear issue.
 11. Write `.stokowski/report.json`: what changed and why, the exact
     verification commands and their real results, assumptions, and known
     limitations. Set `verdict` to `complete` or `blocked`, put the reviewer's
@@ -52,20 +52,20 @@ Implement the solution, create a PR, and ensure it passes all quality checks.
 
 ## Rework run
 
-If this is a rework run (a branch and PR already exist):
+If this is a rework run (a branch and MR already exist):
 
-1. Find the existing PR:
+1. Find the existing MR:
    ```
-   gh pr list --head <branch-name>
+   glab mr list --source-branch <branch-name>
    ```
 2. Read review comments and requested changes:
    ```
-   gh pr view <number> --comments
+   glab mr view <number> --comments
    ```
 3. Address each piece of feedback specifically.
 4. Run the full quality suite again.
 5. Push new commits to the existing branch (do not force-push).
-6. Post a comment on the GitHub PR summarising the rework:
+6. Post a comment on the GitLab MR summarising the rework:
    - Which review comments were addressed
    - What was modified
    - Any decisions or trade-offs
@@ -79,6 +79,6 @@ Before finishing, verify:
 - [ ] No type errors
 - [ ] No lint errors
 - [ ] All acceptance criteria from the ticket description met
-- [ ] PR created (or updated) and linked to Linear issue
+- [ ] MR created (or updated) and linked to Linear issue
 - [ ] Evidence captured to `$STOKOWSKI_ARTIFACTS` for any visible change
 - [ ] `.stokowski/report.json` written, every claim sourced

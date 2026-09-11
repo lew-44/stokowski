@@ -12,7 +12,7 @@
 #
 # Linear states mapping:
 #   active        → the "working" state for agent stages
-#   review        → human review / PR review state
+#   review        → human review / MR review state
 #   gate_approved → human approved a gate (triggers transition)
 #   rework        → human requested changes (triggers rework_to)
 #   terminal      → list of done/closed states
@@ -46,7 +46,7 @@
 #         api_key: "$LINEAR_API_KEY"
 #       workspace:
 #         root: ~/.local/share/stokowski/workspaces/synced-sport
-#       hooks: { after_create: "git clone git@github.com:org/synced-sport.git ." }
+#       hooks: { after_create: "git clone git@gitlab.com:org/synced-sport.git ." }
 #       prompts: { global_prompt: prompts/synced-sport/global.md }
 #       states: { ... }                         # state machine, same as single-project
 #
@@ -58,7 +58,7 @@
 #         api_key: "$LINEAR_API_KEY"
 #       workspace:
 #         root: ~/.local/share/stokowski/workspaces/client-site
-#       hooks: { after_create: "git clone git@github.com:org/client-site.git ." }
+#       hooks: { after_create: "git clone git@gitlab.com:org/client-site.git ." }
 #       prompts: { global_prompt: prompts/client-site/global.md }
 #       claude: { model: claude-opus-4-7 }      # per-project override
 #       max_concurrent: 2                       # per-project cap (also via agent map above)
@@ -120,7 +120,7 @@ hooks:
   # they are read, so it is nearly as fast without breaking diffs.
   after_create: |
     set -e
-    git clone --filter=blob:none git@github.com:your-org/your-repo.git .
+    git clone --filter=blob:none git@gitlab.com:your-org/your-repo.git .
     # Use the package manager the project actually declares. npm fails outright
     # on a pnpm/yarn workspace ("Unsupported URL Type: workspace:").
     npm ci
@@ -291,7 +291,7 @@ states:
       approve: implement
 
   # ── 4. Implement ────────────────────────────────────────────────────────
-  # Write code, create branch, run tests, open PR.
+  # Write code, create branch, run tests, open MR.
   # Uses Sonnet for fast iteration.  Higher turn count for complex work.
   implement:
     type: agent
@@ -304,7 +304,7 @@ states:
       complete: implementation-review
 
   # ── 5. Implementation Review (gate) ─────────────────────────────────────
-  # Human reviews the PR before automated code review.
+  # Human reviews the MR before automated code review.
   # Rework loops back to implement.
   implementation-review:
     type: gate
@@ -342,7 +342,7 @@ states:
       approve: merge
 
   # ── 8. Merge ────────────────────────────────────────────────────────────
-  # Merge the PR and clean up.  Short turn count — just the merge.
+  # Merge the MR and clean up.  Short turn count — just the merge.
   merge:
     type: agent
     prompt: prompts/merge.example.md

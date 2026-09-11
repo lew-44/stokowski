@@ -22,7 +22,7 @@ prompts:
 
 states:
 
-  # No implement, no merge, no PR. An exploration that quietly turns into a
+  # No implement, no merge, no MR. An exploration that quietly turns into a
   # code change has skipped the decision it existed to inform — so the pipeline
   # simply has nowhere to write code. If the answer is "yes, build it", that
   # becomes a new ticket, routed to the feature workflow.

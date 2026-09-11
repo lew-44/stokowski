@@ -377,7 +377,7 @@ workflow.yaml parsed → states + config loaded
                 → retry or continuation scheduled
 ```
 
-The agent itself handles: moving Linear state, posting comments, creating branches, opening PRs via `gh pr create`, linking PR to issue. Stokowski doesn't do any of that — it's the scheduler, not the agent.
+The agent itself handles: moving Linear state, posting comments, creating branches, opening merge requests (the shipped examples use GitLab's `glab mr create`), linking the MR to the issue. Stokowski doesn't do any of that — it's the scheduler, not the agent.
 
 ---
 
